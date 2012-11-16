@@ -319,12 +319,46 @@
     </hasName>
   </Customer>
 
-  <!--<Purchase rdf:ID="purchase_">-->
-    <!--<hasbook>-->
-    <!--</hasbook>-->
-    <!--<hasbuyer>-->
-    <!--</hasbuyer>-->
-  <!--</purchase>-->
+  <Purchase rdf:ID="purchase_1_1">
+    <hasBook rdf:resource="#nijals_saga"/>
+    <hasBuyer rdf:resource="#fluttershy"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_2">
+    <hasBook rdf:resource="#pride_and_prejudice"/>
+    <hasBuyer rdf:resource="#twilight_sparkle"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_3">
+    <hasBook rdf:resource="#the_divine_comedy"/>
+    <hasBuyer rdf:resource="#spike"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_4">
+    <hasBook rdf:resource="#fairy_tales"/>
+    <hasBuyer rdf:resource="#rainbow_dash"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_5">
+    <hasBook rdf:resource="#molloy_malone_unnamable"/>
+    <hasBuyer rdf:resource="#rarity"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_6">
+    <hasBook rdf:resource="#epic_of_gilgamesh"/>
+    <hasBuyer rdf:resource="#pinkie_pie"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_7">
+    <hasBook rdf:resource="#le_pere_goriot"/>
+    <hasBuyer rdf:resource="#applejack"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_8">
+    <hasBook rdf:resource="#one_thousand_and_one_nights"/>
+    <hasBuyer rdf:resource="#rarity"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_9">
+    <hasBook rdf:resource="#pride_and_prejudice"/>
+    <hasBuyer rdf:resource="#spike"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_10">
+    <hasBook rdf:resource="#things_fall_apart"/>
+    <hasBuyer rdf:resource="#twilight_sparkle"/>
+  </Purchase>
 
 
 </rdf:RDF>
