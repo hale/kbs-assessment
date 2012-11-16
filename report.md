@@ -13,17 +13,16 @@
 ### Classify the ontology using an ontology reasoner
 
 ```
-$ java -jar HermiT/HermiT.jar -cPN bookstore.owl
-Prefix(:=<http://www.cs4021/bookstore.owl#>)
+>> java -jar pellet-2.3.0/lib/pellet-cli.jar classify bookstore.owl
+Classifying 8 elements
+Classifying:  100% complete in 00:00
+Classifying finished in 00:00
 
-Ontology(<http://www.cs4021/bookstore.owl#>
-
-  SubClassOf( :Book owl:Thing ) Declaration( Class( :Book ) )
-  SubClassOf( :Person owl:Thing ) Declaration( Class( :Person ) )
-    SubClassOf( :Author :Person ) Declaration( Class( :Author ) )
-    SubClassOf( :Customer :Person ) Declaration( Class( :Customer ) )
-  SubClassOf( :Purchase owl:Thing ) Declaration( Class( :Purchase ) )
-  SubClassOf( :Recommendation owl:Thing ) Declaration( Class( :Recommendation ) )
-
-)
+ owl:Thing
+    bookstore:Book
+    bookstore:Person
+       bookstore:Author
+       bookstore:Customer
+    bookstore:Purchase
+    bookstore:Recommendation
 ```
