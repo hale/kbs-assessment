@@ -281,42 +281,51 @@
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Twilight Sparkle
     </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_2" />
+    <hasMadePurchase rdf:resource="#purchase_1_10" />
   </Customer>
 
   <Customer rdf:ID="spike">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Spike
     </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_3" />
+    <hasMadePurchase rdf:resource="#purchase_1_9" />
   </Customer>
 
   <Customer rdf:ID="applejack">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Applejack
     </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_7" />
   </Customer>
 
   <Customer rdf:ID="rainbow_dash">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Rainbow Dash
     </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_4" />
   </Customer>
 
   <Customer rdf:ID="pinkie_pie">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Pinkie Pie
     </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_6" />
   </Customer>
 
   <Customer rdf:ID="fluttershy">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Fluttershy
     </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_1" />
   </Customer>
 
   <Customer rdf:ID="rarity">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Rarity
     </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_5" />
   </Customer>
 
   <Purchase rdf:ID="purchase_1_1">
