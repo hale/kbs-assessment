@@ -154,6 +154,18 @@
     </hasBuyer>
   </Purchase>
 
+<!-- Custom instances -->
+
+  <Author rdf:ID="anonymous">
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Anonymous
+    </hasName>
+    <hasWritten rdf:resource="#epic_of_gilgamesh"/>
+    <hasWritten rdf:resource="#book_of_job"/>
+    <hasWritten rdf:resource="#one_thousand_and_one_nights"/>
+    <hasWritten rdf:resource="#nijals_saga"/>
+  </Author>
+
   <Book rdf:ID="things_fall_apart">
     <hasAuthor>
       <Author rdf:ID="chinua_achebe">
@@ -167,7 +179,6 @@
       >Things Fall Apart
     </hasTitle>
   </Book>
-
   <Book rdf:ID="fairy_tales">
     <hasAuthor>
       <Author rdf:ID="hans_christian_anderson">
@@ -181,7 +192,6 @@
       >Fairy Tales
     </hasTitle>
   </Book>
-
   <Book rdf:ID="the_divine_comedy">
     <hasAuthor>
       <Author rdf:ID="dante_alighieri">
@@ -195,45 +205,30 @@
       >The Divine Comedy
     </hasTitle>
   </Book>
-
-  <Author rdf:ID="anonymous">
-    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Anonymous
-    </hasName>
-    <hasWritten rdf:resource="#epic_of_gilgamesh"/>
-    <hasWritten rdf:resource="#book_of_job"/>
-    <hasWritten rdf:resource="#one_thousand_and_one_nights"/>
-    <hasWritten rdf:resource="#nijals_saga"/>
-  </Author>
-
   <Book rdf:ID="epic_of_gilgamesh">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Epic of Gilgamesh
     </hasTitle>
   </Book>
-
   <Book rdf:ID="book_of_job">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Book of Job
     </hasTitle>
   </Book>
-
   <Book rdf:ID="one_thousand_and_one_nights">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >On Thousand and One Nights
     </hasTitle>
   </Book>
-
   <Book rdf:ID="nijals_saga">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Njal's Saga
     </hasTitle>
   </Book>
-
   <Book rdf:ID="pride_and_prejudice">
     <hasAuthor>
       <Author rdf:ID="jane_austen">
@@ -247,7 +242,6 @@
       >Pride and Prejudice
     </hasTitle>
   </Book>
-
   <Book rdf:ID="le_pere_goriot">
     <hasAuthor>
       <Author rdf:ID="honore_de_balzac">
@@ -261,7 +255,6 @@
       >Le Pere Goriot
     </hasTitle>
   </Book>
-
   <Book rdf:ID="molloy_malone_unnamable">
     <hasAuthor>
       <Author rdf:ID="samuel_beckett">
@@ -276,56 +269,60 @@
     </hasTitle>
   </Book>
 
-
   <Customer rdf:ID="twilight_sparkle">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Twilight Sparkle
     </hasName>
     <hasMadePurchase rdf:resource="#purchase_1_2" />
     <hasMadePurchase rdf:resource="#purchase_1_10" />
+    <hasMadePurchase rdf:resource="#purchase_1_18" />
   </Customer>
-
   <Customer rdf:ID="spike">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Spike
     </hasName>
     <hasMadePurchase rdf:resource="#purchase_1_3" />
     <hasMadePurchase rdf:resource="#purchase_1_9" />
+    <hasMadePurchase rdf:resource="#purchase_1_16" />
+    <hasMadePurchase rdf:resource="#purchase_1_17" />
   </Customer>
-
   <Customer rdf:ID="applejack">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Applejack
     </hasName>
     <hasMadePurchase rdf:resource="#purchase_1_7" />
+    <hasMadePurchase rdf:resource="#purchase_1_11" />
   </Customer>
-
   <Customer rdf:ID="rainbow_dash">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Rainbow Dash
     </hasName>
     <hasMadePurchase rdf:resource="#purchase_1_4" />
+    <hasMadePurchase rdf:resource="#purchase_1_15" />
   </Customer>
-
   <Customer rdf:ID="pinkie_pie">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Pinkie Pie
     </hasName>
     <hasMadePurchase rdf:resource="#purchase_1_6" />
+    <hasMadePurchase rdf:resource="#purchase_1_12" />
+    <hasMadePurchase rdf:resource="#purchase_1_13" />
   </Customer>
-
   <Customer rdf:ID="fluttershy">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Fluttershy
     </hasName>
     <hasMadePurchase rdf:resource="#purchase_1_1" />
+    <hasMadePurchase rdf:resource="#purchase_1_19" />
+    <hasMadePurchase rdf:resource="#purchase_1_20" />
   </Customer>
-
   <Customer rdf:ID="rarity">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Rarity
     </hasName>
     <hasMadePurchase rdf:resource="#purchase_1_5" />
+    <hasMadePurchase rdf:resource="#purchase_1_8" />
+    <hasMadePurchase rdf:resource="#purchase_1_14" />
   </Customer>
 
   <Purchase rdf:ID="purchase_1_1">
@@ -367,6 +364,46 @@
   <Purchase rdf:ID="purchase_1_10">
     <hasBook rdf:resource="#things_fall_apart"/>
     <hasBuyer rdf:resource="#twilight_sparkle"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_11">
+    <hasBook rdf:resource="#things_fall_apart"/>
+    <hasBuyer rdf:resource="#applejack"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_12">
+    <hasBook rdf:resource="#things_fall_apart"/>
+    <hasBuyer rdf:resource="#pinkie_pie"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_13">
+    <hasBook rdf:resource="#molloy_malone_unnamable"/>
+    <hasBuyer rdf:resource="#pinkie_pie"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_14">
+    <hasBook rdf:resource="#things_fall_apart"/>
+    <hasBuyer rdf:resource="#rarity"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_15">
+    <hasBook rdf:resource="#book_of_job"/>
+    <hasBuyer rdf:resource="#rainbow_dash"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_16">
+    <hasBook rdf:resource="#book_of_job"/>
+    <hasBuyer rdf:resource="#spike"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_17">
+    <hasBook rdf:resource="#one_thousand_and_one_nights"/>
+    <hasBuyer rdf:resource="#spike"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_18">
+    <hasBook rdf:resource="#nijals_saga"/>
+    <hasBuyer rdf:resource="#twilight_sparkle"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_19">
+    <hasBook rdf:resource="#book_of_job"/>
+    <hasBuyer rdf:resource="#fluttershy"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_20">
+    <hasBook rdf:resource="#the_divine_comedy"/>
+    <hasBuyer rdf:resource="#fluttershy"/>
   </Purchase>
 
 
