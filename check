@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# 
+# Checks the consistency of the ontology using pellet.
+#
+# Assumes the presence of:
+#
+# ./pellet-2.3.0/lib/pellet-cli.jar
+# ./bookstore.owl
+#
+java -jar pellet-2.3.0/lib/pellet-cli.jar consistency bookstore.owl

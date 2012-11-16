@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:bookstore="http://www.cs4021/bookstore.owl#"
+  xml:base="http://www.cs4021/bookstoreTest1.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#BookSubject"/>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Fantasy">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Fiction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Scientific_literature">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Science"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#SciFi">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Fiction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Fiction">
+    <rdfs:subClassOf rdf:resource="http://www.cs4021/bookstore.owl#BookSubject"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#River_fishing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Fishing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Book"/>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Space_drama">
+    <rdfs:subClassOf rdf:resource="http://www.cs4021/bookstore.owl#SciFi"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#nonFiction">
+    <rdfs:subClassOf rdf:resource="http://www.cs4021/bookstore.owl#BookSubject"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Ocean_fishing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Fishing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Purchase"/>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Cyberpunk">
+    <rdfs:subClassOf rdf:resource="http://www.cs4021/bookstore.owl#SciFi"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Popular_science">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Science"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Fishing">
+    <rdfs:subClassOf rdf:resource="http://www.cs4021/bookstore.owl#nonFiction"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Alien">
+    <rdfs:subClassOf rdf:resource="http://www.cs4021/bookstore.owl#SciFi"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Author"/>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Customer"/>
+  <owl:Class rdf:about="http://www.cs4021/bookstore.owl#Science">
+    <rdfs:subClassOf rdf:resource="http://www.cs4021/bookstore.owl#nonFiction"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.cs4021/bookstore.owl#hasBook"/>
+  <owl:ObjectProperty rdf:about="http://www.cs4021/bookstore.owl#hasSubject"/>
+  <owl:ObjectProperty rdf:about="http://www.cs4021/bookstore.owl#hasAuthor"/>
+  <owl:ObjectProperty rdf:about="http://www.cs4021/bookstore.owl#hasWritten"/>
+  <owl:ObjectProperty rdf:about="http://www.cs4021/bookstore.owl#hasBuyer"/>
+  <owl:ObjectProperty rdf:about="http://www.cs4021/bookstore.owl#hasMadePurchase"/>
+  <owl:DatatypeProperty rdf:about="http://www.cs4021/bookstore.owl#subjectName"/>
+  <owl:DatatypeProperty rdf:about="http://www.cs4021/bookstore.owl#hasTitle"/>
+  <owl:DatatypeProperty rdf:about="http://www.cs4021/bookstore.owl#hasName"/>
+  <bookstore:Cyberpunk rdf:about="http://www.cs4021/bookstore.owl#cyberpunk">
+    <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cyberpunk</bookstore:subjectName>
+  </bookstore:Cyberpunk>
+  <bookstore:Alien rdf:about="http://www.cs4021/bookstore.owl#alien">
+    <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alien</bookstore:subjectName>
+  </bookstore:Alien>
+  <bookstore:Customer rdf:about="http://www.cs4021/bookstore.owl#Stuart">
+    <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stuart</bookstore:hasName>
+  </bookstore:Customer>
+  <bookstore:BookSubject rdf:about="http://www.cs4021/bookstore.owl#subject"/>
+  <bookstore:Scientific_literature rdf:about="http://www.cs4021/bookstore.owl#scientific_literature">
+    <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ScientificLiterature</bookstore:subjectName>
+  </bookstore:Scientific_literature>
+  <bookstore:Customer rdf:about="http://www.cs4021/bookstore.owl#Yuan">
+    <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Yuan</bookstore:hasName>
+  </bookstore:Customer>
+  <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#Dune">
+    <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dune</bookstore:hasTitle>
+    <bookstore:hasSubject>
+      <bookstore:Fiction rdf:about="http://www.cs4021/bookstore.owl#fiction">
+        <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Fiction</bookstore:subjectName>
+      </bookstore:Fiction>
+    </bookstore:hasSubject>
+    <bookstore:hasSubject>
+      <bookstore:SciFi rdf:about="http://www.cs4021/bookstore.owl#scifi">
+        <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Scifi</bookstore:subjectName>
+      </bookstore:SciFi>
+    </bookstore:hasSubject>
+    <bookstore:hasSubject>
+      <bookstore:Space_drama rdf:about="http://www.cs4021/bookstore.owl#spacedrama">
+        <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Spacedrama</bookstore:subjectName>
+      </bookstore:Space_drama>
+    </bookstore:hasSubject>
+    <bookstore:hasAuthor>
+      <bookstore:Author rdf:about="http://www.cs4021/bookstore.owl#Frank_Herbert">
+        <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Frank Herbert</bookstore:hasName>
+        <bookstore:hasWritten rdf:resource="http://www.cs4021/bookstore.owl#Dune"/>
+        <bookstore:hasWritten>
+          <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#Dune2">
+            <bookstore:hasAuthor rdf:resource="http://www.cs4021/bookstore.owl#Frank_Herbert"/>
+            <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Dune2</bookstore:hasTitle>
+            <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#fiction"/>
+            <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#scifi"/>
+            <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#spacedrama"/>
+          </bookstore:Book>
+        </bookstore:hasWritten>
+      </bookstore:Author>
+    </bookstore:hasAuthor>
+  </bookstore:Book>
+  <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#Fly_Fishing">
+    <bookstore:hasSubject>
+      <bookstore:Fishing rdf:about="http://www.cs4021/bookstore.owl#fishing">
+        <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Fishing</bookstore:subjectName>
+      </bookstore:Fishing>
+    </bookstore:hasSubject>
+    <bookstore:hasSubject>
+      <bookstore:nonFiction rdf:about="http://www.cs4021/bookstore.owl#nonfiction">
+        <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Nonfiction</bookstore:subjectName>
+      </bookstore:nonFiction>
+    </bookstore:hasSubject>
+    <bookstore:hasSubject>
+      <bookstore:River_fishing rdf:about="http://www.cs4021/bookstore.owl#riverfishing">
+        <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >RiverFishing</bookstore:subjectName>
+      </bookstore:River_fishing>
+    </bookstore:hasSubject>
+    <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fly Fishing</bookstore:hasTitle>
+    <bookstore:hasAuthor>
+      <bookstore:Author rdf:about="http://www.cs4021/bookstore.owl#J_R_Hartley">
+        <bookstore:hasWritten rdf:resource="http://www.cs4021/bookstore.owl#Fly_Fishing"/>
+        <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >J. R. Hartley</bookstore:hasName>
+      </bookstore:Author>
+    </bookstore:hasAuthor>
+  </bookstore:Book>
+  <bookstore:Author rdf:about="http://www.cs4021/bookstore.owl#Tolkien">
+    <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tolkien</bookstore:hasName>
+    <bookstore:hasWritten>
+      <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#Fellow_of_the_Ring">
+        <bookstore:hasAuthor rdf:resource="http://www.cs4021/bookstore.owl#Tolkien"/>
+        <bookstore:hasSubject>
+          <bookstore:Fantasy rdf:about="http://www.cs4021/bookstore.owl#fantasy">
+            <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Fantasy</bookstore:subjectName>
+          </bookstore:Fantasy>
+        </bookstore:hasSubject>
+        <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#fiction"/>
+        <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the Fellowship of the Ring</bookstore:hasTitle>
+      </bookstore:Book>
+    </bookstore:hasWritten>
+    <bookstore:hasWritten>
+      <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#Return_of_the_King">
+        <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#fantasy"/>
+        <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#fiction"/>
+        <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Return of the King</bookstore:hasTitle>
+        <bookstore:hasAuthor rdf:resource="http://www.cs4021/bookstore.owl#Tolkien"/>
+      </bookstore:Book>
+    </bookstore:hasWritten>
+    <bookstore:hasWritten>
+      <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#Twin_Tower">
+        <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Twin Tower</bookstore:hasTitle>
+        <bookstore:hasAuthor rdf:resource="http://www.cs4021/bookstore.owl#Tolkien"/>
+        <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#fantasy"/>
+        <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#fiction"/>
+      </bookstore:Book>
+    </bookstore:hasWritten>
+    <bookstore:hasWritten>
+      <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#the_Hobbit">
+        <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#fantasy"/>
+        <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#fiction"/>
+        <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the Hobbit</bookstore:hasTitle>
+        <bookstore:hasAuthor rdf:resource="http://www.cs4021/bookstore.owl#Tolkien"/>
+      </bookstore:Book>
+    </bookstore:hasWritten>
+  </bookstore:Author>
+  <bookstore:Customer rdf:about="http://www.cs4021/bookstore.owl#Jek">
+    <bookstore:hasMadePurchase>
+      <bookstore:Purchase rdf:about="http://www.cs4021/bookstore.owl#Purchase_1">
+        <bookstore:hasBook>
+          <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#Moby_Dick">
+            <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#fishing"/>
+            <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#nonfiction"/>
+            <bookstore:hasSubject>
+              <bookstore:Ocean_fishing rdf:about="http://www.cs4021/bookstore.owl#oceanfishing">
+                <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >OceanFishing</bookstore:subjectName>
+              </bookstore:Ocean_fishing>
+            </bookstore:hasSubject>
+            <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Moby Dick</bookstore:hasTitle>
+            <bookstore:hasAuthor>
+              <bookstore:Author rdf:about="http://www.cs4021/bookstore.owl#Herman_Melville">
+                <bookstore:hasWritten rdf:resource="http://www.cs4021/bookstore.owl#Moby_Dick"/>
+                <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Herman Melville</bookstore:hasName>
+              </bookstore:Author>
+            </bookstore:hasAuthor>
+          </bookstore:Book>
+        </bookstore:hasBook>
+        <bookstore:hasBuyer rdf:resource="http://www.cs4021/bookstore.owl#Jek"/>
+      </bookstore:Purchase>
+    </bookstore:hasMadePurchase>
+    <bookstore:hasMadePurchase>
+      <bookstore:Purchase rdf:about="http://www.cs4021/bookstore.owl#Purchase_39">
+        <bookstore:hasBook rdf:resource="http://www.cs4021/bookstore.owl#Fellow_of_the_Ring"/>
+        <bookstore:hasBuyer rdf:resource="http://www.cs4021/bookstore.owl#Jek"/>
+      </bookstore:Purchase>
+    </bookstore:hasMadePurchase>
+    <bookstore:hasMadePurchase>
+      <bookstore:Purchase rdf:about="http://www.cs4021/bookstore.owl#Purchase_6">
+        <bookstore:hasBook rdf:resource="http://www.cs4021/bookstore.owl#Fly_Fishing"/>
+        <bookstore:hasBuyer rdf:resource="http://www.cs4021/bookstore.owl#Jek"/>
+      </bookstore:Purchase>
+    </bookstore:hasMadePurchase>
+    <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Jek</bookstore:hasName>
+  </bookstore:Customer>
+  <bookstore:Customer rdf:about="http://www.cs4021/bookstore.owl#David">
+    <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >David</bookstore:hasName>
+    <bookstore:hasMadePurchase>
+      <bookstore:Purchase rdf:about="http://www.cs4021/bookstore.owl#Purchase_17">
+        <bookstore:hasBook rdf:resource="http://www.cs4021/bookstore.owl#Moby_Dick"/>
+        <bookstore:hasBuyer rdf:resource="http://www.cs4021/bookstore.owl#David"/>
+      </bookstore:Purchase>
+    </bookstore:hasMadePurchase>
+    <bookstore:hasMadePurchase>
+      <bookstore:Purchase rdf:about="http://www.cs4021/bookstore.owl#Purchase_4">
+        <bookstore:hasBook rdf:resource="http://www.cs4021/bookstore.owl#Fly_Fishing"/>
+        <bookstore:hasBuyer rdf:resource="http://www.cs4021/bookstore.owl#David"/>
+      </bookstore:Purchase>
+    </bookstore:hasMadePurchase>
+  </bookstore:Customer>
+  <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#A_Brief_History_of_Time">
+    <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Brief History of Time</bookstore:hasTitle>
+    <bookstore:hasSubject>
+      <bookstore:Popular_science rdf:about="http://www.cs4021/bookstore.owl#popularscience">
+        <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >PopularScience</bookstore:subjectName>
+      </bookstore:Popular_science>
+    </bookstore:hasSubject>
+    <bookstore:hasSubject>
+      <bookstore:Science rdf:about="http://www.cs4021/bookstore.owl#science">
+        <bookstore:subjectName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Science</bookstore:subjectName>
+      </bookstore:Science>
+    </bookstore:hasSubject>
+    <bookstore:hasAuthor>
+      <bookstore:Author rdf:about="http://www.cs4021/bookstore.owl#Hawking">
+        <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >HawKing</bookstore:hasName>
+        <bookstore:hasWritten rdf:resource="http://www.cs4021/bookstore.owl#A_Brief_History_of_Time"/>
+      </bookstore:Author>
+    </bookstore:hasAuthor>
+  </bookstore:Book>
+  <bookstore:Customer rdf:about="http://www.cs4021/bookstore.owl#Jeff">
+    <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Jeff</bookstore:hasName>
+    <bookstore:hasMadePurchase>
+      <bookstore:Purchase rdf:about="http://www.cs4021/bookstore.owl#Purchase_5">
+        <bookstore:hasBuyer rdf:resource="http://www.cs4021/bookstore.owl#Jeff"/>
+        <bookstore:hasBook rdf:resource="http://www.cs4021/bookstore.owl#Moby_Dick"/>
+      </bookstore:Purchase>
+    </bookstore:hasMadePurchase>
+  </bookstore:Customer>
+  <bookstore:Book rdf:about="http://www.cs4021/bookstore.owl#The_Emperors_New_Mind">
+    <bookstore:hasAuthor>
+      <bookstore:Author rdf:about="http://www.cs4021/bookstore.owl#Roger_Penrose">
+        <bookstore:hasWritten rdf:resource="http://www.cs4021/bookstore.owl#The_Emperors_New_Mind"/>
+        <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Roger Penrose</bookstore:hasName>
+      </bookstore:Author>
+    </bookstore:hasAuthor>
+    <bookstore:hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Emperors New Mind</bookstore:hasTitle>
+    <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#nonfiction"/>
+    <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#popularscience"/>
+    <bookstore:hasSubject rdf:resource="http://www.cs4021/bookstore.owl#science"/>
+  </bookstore:Book>
+  <bookstore:Customer rdf:about="http://www.cs4021/bookstore.owl#Edward">
+    <bookstore:hasMadePurchase>
+      <bookstore:Purchase rdf:about="http://www.cs4021/bookstore.owl#Purchase_38">
+        <bookstore:hasBuyer rdf:resource="http://www.cs4021/bookstore.owl#Edward"/>
+        <bookstore:hasBook rdf:resource="http://www.cs4021/bookstore.owl#Dune"/>
+      </bookstore:Purchase>
+    </bookstore:hasMadePurchase>
+    <bookstore:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Edward</bookstore:hasName>
+  </bookstore:Customer>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.1, Build 536)  http://protege.stanford.edu -->

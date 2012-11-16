@@ -1,0 +1,32 @@
+(mapclass Person)
+
+(mapclass Book)
+
+(mapclass Purchase)
+
+(mapclass Recommendation)
+
+(defrule recommend-1
+
+	(object (is-a Customer) (OBJECT ?PersonObject1) (hasName ?Person1) (hasMadePurchase $? ?Purch1 $?))
+	(object (is-a Purchase) (OBJECT ?Purch1) (hasBuyer ?PersonObject1) (hasBook ?BookObjectA))
+
+	(object (is-a Customer) (OBJECT ?PersonObject2) (hasName ?Person2) (hasMadePurchase $? ?Purch2 $?))
+	(object (is-a Customer) (OBJECT ?PersonObject2) (hasName ?Person2) (hasMadePurchase $? ?Purch3 $?))
+
+	(test (neq ?Person1 ?Person2))
+	(test (neq ?Purch2 ?Purch3))
+
+	(object (is-a Purchase) (OBJECT ?Purch2) (hasBuyer ?PersonObject2) (hasBook ?BookObjectA))
+	(object (is-a Purchase) (OBJECT ?Purch3) (hasBuyer ?PersonObject2) (hasBook ?BookObjectB))
+	(not (object (is-a Purchase) (hasBuyer ?PersonObject1) (hasBook ?BookObjectB)))
+	(not (object (is-a Recommendation) (hasBuyer ?PersonObject1) (hasBook ?BookObjectB)))
+
+	(object (is-a Book) (OBJECT ?BookObjectA) (hasTitle ?titleA))
+	(object (is-a Book) (OBJECT ?BookObjectB) (hasTitle ?titleB))
+
+	=>
+
+	(printout t "Recommendation for " ?Person1 ": other people that bought \"" ?titleA "\" also bought \"" ?titleB "\"" crlf)
+	(make-instance of Recommendation (hasBuyer ?PersonObject1) (hasBook ?BookObjectB))
+)
