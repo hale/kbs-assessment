@@ -101,6 +101,95 @@
     <rdfs:range rdf:resource="#Person"/>
   </owl:FunctionalProperty>
 
+  <!--ONTOLOGY EXTENSIONS-->
+
+  <!--CATEGORIES-->
+
+  <owl:Class rdf:ID="book_subject">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <!--TOP LEVEL CATEGORIES-->
+  <owl:Class rdf:ID="fiction">
+    <rdfs:subClassOf rdf:resource="#book_subject"/>
+  </owl:Class>
+  <owl:Class rdf:ID="non_fiction">
+    <rdfs:subClassOf rdf:resource="#book_subject"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="english">
+    <rdfs:subClassOf rdf:resource="#book_subject"/>
+  </owl:Class>
+  <owl:Class rdf:ID="non_english">
+    <rdfs:subClassOf rdf:resource="#book_subject"/>
+  </owl:Class>
+
+  <!--FICTION SUBCATEGORIES-->
+  <owl:Class rdf:ID="novel">
+    <rdfs:subClassOf rdf:resource="#fiction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="play">
+    <rdfs:subClassOf rdf:resource="#fiction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="poetry">
+    <rdfs:subClassOf rdf:resource="#fiction"/>
+  </owl:Class>
+
+  <!--NOVEL SUBCATEGORIES-->
+  <owl:Class rdf:ID="novel_c21">
+    <rdfs:subClassOf rdf:resource="#novel"/>
+  </owl:Class>
+  <owl:Class rdf:ID="novel_c20">
+    <rdfs:subClassOf rdf:resource="#novel"/>
+  </owl:Class>
+  <owl:Class rdf:ID="novel_c19">
+    <rdfs:subClassOf rdf:resource="#novel"/>
+  </owl:Class>
+
+  <!--NON-FICTION SUBCATEGORIES-->
+  <owl:Class rdf:ID="category_travel">
+    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="category_calendars">
+    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="category_business">
+    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="category_languages">
+    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="category_computing">
+    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  </owl:Class>
+
+
+  <!--NON-ENGLISH SUBCATEGORIES-->
+  <owl:Class rdf:ID="language_french">
+    <rdfs:subClassOf rdf:resource="#non_english"/>
+  </owl:Class>
+  <owl:Class rdf:ID="language_german">
+    <rdfs:subClassOf rdf:resource="#non_english"/>
+  </owl:Class>
+  <owl:Class rdf:ID="language_latin">
+    <rdfs:subClassOf rdf:resource="#non_english"/>
+  </owl:Class>
+  <owl:Class rdf:ID="language_greek">
+    <rdfs:subClassOf rdf:resource="#non_english"/>
+  </owl:Class>
+  <owl:Class rdf:ID="language_russian">
+    <rdfs:subClassOf rdf:resource="#non_english"/>
+  </owl:Class>
+  <owl:Class rdf:ID="language_hebrew">
+    <rdfs:subClassOf rdf:resource="#non_english"/>
+  </owl:Class>
+  <owl:Class rdf:ID="language_arabic">
+    <rdfs:subClassOf rdf:resource="#non_english"/>
+  </owl:Class>
+
+
+
+  <!--INSTANCES-->
 
   <Purchase rdf:ID="Purchase_17">
     <hasBook>
@@ -415,6 +504,14 @@
   <Recommendation rdf:ID="recommendation_1_1">
     <hasBook rdf:resource="#pride_and_prejudice"/>
     <hasBuyer rdf:resource="#fluttershy"/>
+  </Recommendation>
+  <Recommendation rdf:ID="recommendation_1_2">
+    <hasBook rdf:resource="#molloy_malone_unnamable"/>
+    <hasBuyer rdf:resource="#spike"/>
+  </Recommendation>
+  <Recommendation rdf:ID="recommendation_1_3">
+    <hasBook rdf:resource="#the_divine_comedy"/>
+    <hasBuyer rdf:resource="#twilight_sparkle"/>
   </Recommendation>
 
 </rdf:RDF>
