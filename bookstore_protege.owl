@@ -105,86 +105,86 @@
 
   <!--CATEGORIES-->
 
-  <owl:Class rdf:ID="book_subject">
+  <owl:Class rdf:ID="BookSubject">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
 
   <!--TOP LEVEL CATEGORIES-->
-  <owl:Class rdf:ID="fiction">
-    <rdfs:subClassOf rdf:resource="#book_subject"/>
+  <owl:Class rdf:ID="Fiction">
+    <rdfs:subClassOf rdf:resource="#BookSubject"/>
   </owl:Class>
-  <owl:Class rdf:ID="non_fiction">
-    <rdfs:subClassOf rdf:resource="#book_subject"/>
+  <owl:Class rdf:ID="NonFiction">
+    <rdfs:subClassOf rdf:resource="#BookSubject"/>
   </owl:Class>
 
-  <owl:Class rdf:ID="english">
-    <rdfs:subClassOf rdf:resource="#book_subject"/>
+  <owl:Class rdf:ID="English">
+    <rdfs:subClassOf rdf:resource="#BookSubject"/>
   </owl:Class>
-  <owl:Class rdf:ID="non_english">
-    <rdfs:subClassOf rdf:resource="#book_subject"/>
+  <owl:Class rdf:ID="NonEnglish">
+    <rdfs:subClassOf rdf:resource="#BookSubject"/>
   </owl:Class>
 
   <!--FICTION SUBCATEGORIES-->
-  <owl:Class rdf:ID="novel">
-    <rdfs:subClassOf rdf:resource="#fiction"/>
+  <owl:Class rdf:ID="Novel">
+    <rdfs:subClassOf rdf:resource="#Fiction"/>
   </owl:Class>
-  <owl:Class rdf:ID="play">
-    <rdfs:subClassOf rdf:resource="#fiction"/>
+  <owl:Class rdf:ID="Play">
+    <rdfs:subClassOf rdf:resource="#Fiction"/>
   </owl:Class>
-  <owl:Class rdf:ID="poetry">
-    <rdfs:subClassOf rdf:resource="#fiction"/>
+  <owl:Class rdf:ID="Poetry">
+    <rdfs:subClassOf rdf:resource="#Fiction"/>
   </owl:Class>
 
   <!--NOVEL SUBCATEGORIES-->
-  <owl:Class rdf:ID="novel_c21">
-    <rdfs:subClassOf rdf:resource="#novel"/>
+  <owl:Class rdf:ID="NovelC21">
+    <rdfs:subClassOf rdf:resource="#Novel"/>
   </owl:Class>
-  <owl:Class rdf:ID="novel_c20">
-    <rdfs:subClassOf rdf:resource="#novel"/>
+  <owl:Class rdf:ID="NovelC20">
+    <rdfs:subClassOf rdf:resource="#Novel"/>
   </owl:Class>
-  <owl:Class rdf:ID="novel_c19">
-    <rdfs:subClassOf rdf:resource="#novel"/>
+  <owl:Class rdf:ID="NovelC19">
+    <rdfs:subClassOf rdf:resource="#Novel"/>
   </owl:Class>
 
   <!--NON-FICTION SUBCATEGORIES-->
-  <owl:Class rdf:ID="category_travel">
-    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  <owl:Class rdf:ID="CategoryTravel">
+    <rdfs:subClassOf rdf:resource="#NonFiction"/>
   </owl:Class>
-  <owl:Class rdf:ID="category_calendars">
-    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  <owl:Class rdf:ID="CategoryCalendars">
+    <rdfs:subClassOf rdf:resource="#NonFiction"/>
   </owl:Class>
-  <owl:Class rdf:ID="category_business">
-    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  <owl:Class rdf:ID="CategoryBusiness">
+    <rdfs:subClassOf rdf:resource="#NonFiction"/>
   </owl:Class>
-  <owl:Class rdf:ID="category_languages">
-    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  <owl:Class rdf:ID="CategoryLanguages">
+    <rdfs:subClassOf rdf:resource="#NonFiction"/>
   </owl:Class>
-  <owl:Class rdf:ID="category_computing">
-    <rdfs:subClassOf rdf:resource="#non_fiction"/>
+  <owl:Class rdf:ID="CategoryComputing">
+    <rdfs:subClassOf rdf:resource="#NonFiction"/>
   </owl:Class>
 
 
   <!--NON-ENGLISH SUBCATEGORIES-->
-  <owl:Class rdf:ID="language_french">
-    <rdfs:subClassOf rdf:resource="#non_english"/>
+  <owl:Class rdf:ID="LanguageFrench">
+    <rdfs:subClassOf rdf:resource="#NonEnglish"/>
   </owl:Class>
-  <owl:Class rdf:ID="language_german">
-    <rdfs:subClassOf rdf:resource="#non_english"/>
+  <owl:Class rdf:ID="LanguageGerman">
+    <rdfs:subClassOf rdf:resource="#NonEnglish"/>
   </owl:Class>
-  <owl:Class rdf:ID="language_latin">
-    <rdfs:subClassOf rdf:resource="#non_english"/>
+  <owl:Class rdf:ID="LanguageLatin">
+    <rdfs:subClassOf rdf:resource="#NonEnglish"/>
   </owl:Class>
-  <owl:Class rdf:ID="language_greek">
-    <rdfs:subClassOf rdf:resource="#non_english"/>
+  <owl:Class rdf:ID="LanguageGreek">
+    <rdfs:subClassOf rdf:resource="#NonEnglish"/>
   </owl:Class>
-  <owl:Class rdf:ID="language_russian">
-    <rdfs:subClassOf rdf:resource="#non_english"/>
+  <owl:Class rdf:ID="LanguageRussian">
+    <rdfs:subClassOf rdf:resource="#NonEnglish"/>
   </owl:Class>
-  <owl:Class rdf:ID="language_hebrew">
-    <rdfs:subClassOf rdf:resource="#non_english"/>
+  <owl:Class rdf:ID="LanguageHebrew">
+    <rdfs:subClassOf rdf:resource="#NonEnglish"/>
   </owl:Class>
-  <owl:Class rdf:ID="language_arabic">
-    <rdfs:subClassOf rdf:resource="#non_english"/>
+  <owl:Class rdf:ID="LanguageArabic">
+    <rdfs:subClassOf rdf:resource="#NonEnglish"/>
   </owl:Class>
 
 
@@ -513,6 +513,31 @@
     <hasBook rdf:resource="#the_divine_comedy"/>
     <hasBuyer rdf:resource="#twilight_sparkle"/>
   </Recommendation>
+
+  <!--REPRESENTING CLASSES AS VALUES -->
+  <!--Approach 2: Create special instances of the class to be used as property values (http://www.w3.org/TR/swbp-classes-as-values/)-->
+  <Fiction rdf:id="fiction_subject"/>
+  <NonFiction rdf:id="non_fiction_subject"/>
+  <English rdf:id="english_subject"/>
+  <NonEnglish rdf:id="non_english_subject"/>
+  <Novel rdf:id="novel_subject"/>
+  <Play rdf:id="play_subject"/>
+  <Poetry rdf:id="poetry_subject"/>
+  <NovelC21 rdf:id="novel_c21_subject"/>
+  <NovelC20 rdf:id="novel_c20_subject"/>
+  <NovelC19 rdf:id="novel_c19_subject"/>
+  <CategoryTravel rdf:id="category_travel_subject"/>
+  <CategoryCalendars rdf:id="category_calendars_subject"/>
+  <CategoryBusiness rdf:id="category_business_subject"/>
+  <CategoryLanguages rdf:id="category_languages_subject"/>
+  <CategoryComputing rdf:id="category_computing_subject"/>
+  <LanguageFrench rdf:id="language_french_subject"/>
+  <LanguageGerman rdf:id="language_german_subject"/>
+  <LanguageLatin rdf:id="language_latin_subject"/>
+  <LanguageGreek rdf:id="language_greek_subject"/>
+  <LanguageRussian rdf:id="language_russian_subject"/>
+  <LanguageHebrew rdf:id="language_hebrew_subject"/>
+  <LanguageArabic rdf:id="language_arabic_subject"/>
 
 </rdf:RDF>
 
