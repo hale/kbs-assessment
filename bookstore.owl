@@ -101,15 +101,24 @@
     <rdfs:range rdf:resource="#Person"/>
   </owl:FunctionalProperty>
 
+  <!--                   -->
   <!--ONTOLOGY EXTENSIONS-->
+  <!--                   -->
 
-  <!--CATEGORIES-->
+  <!--BOOKS HAVE SUBJECTS-->
+  <owl:ObjectProperty rdf:ID="hasSubject">
+    <rdfs:domain rdf:resource="#Book"/>
+    <rdfs:range rdf:resource="#BookSubject"/>
+  </owl:ObjectProperty>
+
+
+  <!-- SUBJECTS-->
 
   <owl:Class rdf:ID="BookSubject">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
 
-  <!--TOP LEVEL CATEGORIES-->
+  <!--TOP LEVEL SUBJECTS-->
   <owl:Class rdf:ID="Fiction">
     <rdfs:subClassOf rdf:resource="#BookSubject"/>
   </owl:Class>
@@ -124,7 +133,7 @@
     <rdfs:subClassOf rdf:resource="#BookSubject"/>
   </owl:Class>
 
-  <!--FICTION SUBCATEGORIES-->
+  <!--FICTION SUB-SUBJECTS-->
   <owl:Class rdf:ID="Novel">
     <rdfs:subClassOf rdf:resource="#Fiction"/>
   </owl:Class>
@@ -135,7 +144,7 @@
     <rdfs:subClassOf rdf:resource="#Fiction"/>
   </owl:Class>
 
-  <!--NOVEL SUBCATEGORIES-->
+  <!--NOVEL SUB-SUBJECTS-->
   <owl:Class rdf:ID="NovelC21">
     <rdfs:subClassOf rdf:resource="#Novel"/>
   </owl:Class>
@@ -146,7 +155,7 @@
     <rdfs:subClassOf rdf:resource="#Novel"/>
   </owl:Class>
 
-  <!--NON-FICTION SUBCATEGORIES-->
+  <!--NON-FICTION SUB-SUBJECTS-->
   <owl:Class rdf:ID="CategoryTravel">
     <rdfs:subClassOf rdf:resource="#NonFiction"/>
   </owl:Class>
@@ -164,7 +173,7 @@
   </owl:Class>
 
 
-  <!--NON-ENGLISH SUBCATEGORIES-->
+  <!--NON-ENGLISH SUB-SUBJECTS-->
   <owl:Class rdf:ID="LanguageFrench">
     <rdfs:subClassOf rdf:resource="#NonEnglish"/>
   </owl:Class>
@@ -187,9 +196,9 @@
     <rdfs:subClassOf rdf:resource="#NonEnglish"/>
   </owl:Class>
 
-
-
+  <!--         -->
   <!--INSTANCES-->
+  <!--         -->
 
   <Purchase rdf:ID="Purchase_17">
     <hasBook>
@@ -514,8 +523,8 @@
     <hasBuyer rdf:resource="#twilight_sparkle"/>
   </Recommendation>
 
-  <!--REPRESENTING CLASSES AS VALUES -->
-  <!--Approach 2: Create special instances of the class to be used as property values (http://www.w3.org/TR/swbp-classes-as-values/)-->
+  <!--SUBJECTS-->
+  <!--Representing Classes as Values: Approach 2: Create special instances of the class to be used as property values (http://www.w3.org/TR/swbp-classes-as-values/)-->
   <Fiction rdf:ID="fiction_subject"/>
   <NonFiction rdf:ID="non_fiction_subject"/>
   <English rdf:ID="english_subject"/>

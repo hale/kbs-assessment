@@ -516,28 +516,28 @@
 
   <!--REPRESENTING CLASSES AS VALUES -->
   <!--Approach 2: Create special instances of the class to be used as property values (http://www.w3.org/TR/swbp-classes-as-values/)-->
-  <Fiction rdf:id="fiction_subject"/>
-  <NonFiction rdf:id="non_fiction_subject"/>
-  <English rdf:id="english_subject"/>
-  <NonEnglish rdf:id="non_english_subject"/>
-  <Novel rdf:id="novel_subject"/>
-  <Play rdf:id="play_subject"/>
-  <Poetry rdf:id="poetry_subject"/>
-  <NovelC21 rdf:id="novel_c21_subject"/>
-  <NovelC20 rdf:id="novel_c20_subject"/>
-  <NovelC19 rdf:id="novel_c19_subject"/>
-  <CategoryTravel rdf:id="category_travel_subject"/>
-  <CategoryCalendars rdf:id="category_calendars_subject"/>
-  <CategoryBusiness rdf:id="category_business_subject"/>
-  <CategoryLanguages rdf:id="category_languages_subject"/>
-  <CategoryComputing rdf:id="category_computing_subject"/>
-  <LanguageFrench rdf:id="language_french_subject"/>
-  <LanguageGerman rdf:id="language_german_subject"/>
-  <LanguageLatin rdf:id="language_latin_subject"/>
-  <LanguageGreek rdf:id="language_greek_subject"/>
-  <LanguageRussian rdf:id="language_russian_subject"/>
-  <LanguageHebrew rdf:id="language_hebrew_subject"/>
-  <LanguageArabic rdf:id="language_arabic_subject"/>
+  <Fiction rdf:ID="fiction_subject"/>
+  <NonFiction rdf:ID="non_fiction_subject"/>
+  <English rdf:ID="english_subject"/>
+  <NonEnglish rdf:ID="non_english_subject"/>
+  <Novel rdf:ID="novel_subject"/>
+  <Play rdf:ID="play_subject"/>
+  <Poetry rdf:ID="poetry_subject"/>
+  <NovelC21 rdf:ID="novel_c21_subject"/>
+  <NovelC20 rdf:ID="novel_c20_subject"/>
+  <NovelC19 rdf:ID="novel_c19_subject"/>
+  <CategoryTravel rdf:ID="category_travel_subject"/>
+  <CategoryCalendars rdf:ID="category_calendars_subject"/>
+  <CategoryBusiness rdf:ID="category_business_subject"/>
+  <CategoryLanguages rdf:ID="category_languages_subject"/>
+  <CategoryComputing rdf:ID="category_computing_subject"/>
+  <LanguageFrench rdf:ID="language_french_subject"/>
+  <LanguageGerman rdf:ID="language_german_subject"/>
+  <LanguageLatin rdf:ID="language_latin_subject"/>
+  <LanguageGreek rdf:ID="language_greek_subject"/>
+  <LanguageRussian rdf:ID="language_russian_subject"/>
+  <LanguageHebrew rdf:ID="language_hebrew_subject"/>
+  <LanguageArabic rdf:ID="language_arabic_subject"/>
 
 </rdf:RDF>
 
