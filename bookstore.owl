@@ -360,7 +360,7 @@
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Le Pere Goriot
     </hasTitle>
-    <hasSubject rdf:resource="#laguage_french_subject"/>
+    <hasSubject rdf:resource="#language_french_subject"/>
   </Book>
   <Book rdf:ID="molloy_malone_unnamable">
     <hasAuthor>

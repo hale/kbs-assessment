@@ -276,6 +276,7 @@
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Things Fall Apart
     </hasTitle>
+    <hasSubject rdf:resource="#novel_c20_subject"/>
   </Book>
   <Book rdf:ID="fairy_tales">
     <hasAuthor>
@@ -289,6 +290,7 @@
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Fairy Tales
     </hasTitle>
+    <hasSubject rdf:resource="#fiction_subject"/>
   </Book>
   <Book rdf:ID="the_divine_comedy">
     <hasAuthor>
@@ -302,30 +304,35 @@
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >The Divine Comedy
     </hasTitle>
+    <hasSubject rdf:resource="#poetry_subject"/>
   </Book>
   <Book rdf:ID="epic_of_gilgamesh">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Epic of Gilgamesh
     </hasTitle>
+    <hasSubject rdf:resource="#poetry_subject"/>
   </Book>
   <Book rdf:ID="book_of_job">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Book of Job
     </hasTitle>
+    <hasSubject rdf:resource="#language_hebrew_subject"/>
   </Book>
   <Book rdf:ID="one_thousand_and_one_nights">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >On Thousand and One Nights
     </hasTitle>
+    <hasSubject rdf:resource="#language_arabic_subject"/>
   </Book>
   <Book rdf:ID="nijals_saga">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Njal's Saga
     </hasTitle>
+    <hasSubject rdf:resource="#non_english_subject"/>
   </Book>
   <Book rdf:ID="pride_and_prejudice">
     <hasAuthor>
@@ -339,6 +346,7 @@
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Pride and Prejudice
     </hasTitle>
+    <hasSubject rdf:resource="#novel_c19_subject"/>
   </Book>
   <Book rdf:ID="le_pere_goriot">
     <hasAuthor>
@@ -352,6 +360,7 @@
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Le Pere Goriot
     </hasTitle>
+    <hasSubject rdf:resource="#language_french_subject"/>
   </Book>
   <Book rdf:ID="molloy_malone_unnamable">
     <hasAuthor>
@@ -365,6 +374,7 @@
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Molloy, Malone Dies, The Unnamable, a trilogy
     </hasTitle>
+    <hasSubject rdf:resource="#play_subject"/>
   </Book>
 
   <!--CUSTOM CUSTOMERS-->
