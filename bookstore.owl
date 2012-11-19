@@ -416,6 +416,14 @@
     <hasBook rdf:resource="#pride_and_prejudice"/>
     <hasBuyer rdf:resource="#fluttershy"/>
   </Recommendation>
+  <Recommendation rdf:ID="recommendation_1_2">
+    <hasBook rdf:resource="#molloy_malone_unnamable"/>
+    <hasBuyer rdf:resource="#spike"/>
+  </Recommendation>
+  <Recommendation rdf:ID="recommendation_1_3">
+    <hasBook rdf:resource="#the_divine_comedy"/>
+    <hasBuyer rdf:resource="#twilight_sparkle"/>
+  </Recommendation>
 
 </rdf:RDF>
 
