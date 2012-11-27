@@ -383,107 +383,51 @@
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Twilight Sparkle
     </hasName>
-    <hasMadePurchase rdf:resource="#purchase_1_2" />
-    <hasMadePurchase rdf:resource="#purchase_1_10" />
     <hasMadePurchase rdf:resource="#purchase_1_18" />
   </Customer>
   <Customer rdf:ID="spike">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Spike
     </hasName>
-    <hasMadePurchase rdf:resource="#purchase_1_3" />
-    <hasMadePurchase rdf:resource="#purchase_1_9" />
-    <hasMadePurchase rdf:resource="#purchase_1_16" />
     <hasMadePurchase rdf:resource="#purchase_1_17" />
   </Customer>
   <Customer rdf:ID="applejack">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Applejack
     </hasName>
-    <hasMadePurchase rdf:resource="#purchase_1_7" />
     <hasMadePurchase rdf:resource="#purchase_1_11" />
   </Customer>
   <Customer rdf:ID="rainbow_dash">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Rainbow Dash
     </hasName>
-    <hasMadePurchase rdf:resource="#purchase_1_4" />
     <hasMadePurchase rdf:resource="#purchase_1_15" />
   </Customer>
   <Customer rdf:ID="pinkie_pie">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Pinkie Pie
     </hasName>
-    <hasMadePurchase rdf:resource="#purchase_1_6" />
-    <hasMadePurchase rdf:resource="#purchase_1_12" />
     <hasMadePurchase rdf:resource="#purchase_1_13" />
   </Customer>
   <Customer rdf:ID="fluttershy">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Fluttershy
     </hasName>
-    <hasMadePurchase rdf:resource="#purchase_1_1" />
-    <hasMadePurchase rdf:resource="#purchase_1_19" />
     <hasMadePurchase rdf:resource="#purchase_1_20" />
+    <hasMadePurchase rdf:resource="#purchase_1_1" />
   </Customer>
   <Customer rdf:ID="rarity">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
       >Rarity
     </hasName>
-    <hasMadePurchase rdf:resource="#purchase_1_5" />
-    <hasMadePurchase rdf:resource="#purchase_1_8" />
     <hasMadePurchase rdf:resource="#purchase_1_14" />
   </Customer>
 
   <!--CUSTOM PURCHASES  -->
 
-  <Purchase rdf:ID="purchase_1_1">
-    <hasBook rdf:resource="#nijals_saga"/>
-    <hasBuyer rdf:resource="#fluttershy"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_2">
-    <hasBook rdf:resource="#pride_and_prejudice"/>
-    <hasBuyer rdf:resource="#twilight_sparkle"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_3">
-    <hasBook rdf:resource="#the_divine_comedy"/>
-    <hasBuyer rdf:resource="#spike"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_4">
-    <hasBook rdf:resource="#fairy_tales"/>
-    <hasBuyer rdf:resource="#rainbow_dash"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_5">
-    <hasBook rdf:resource="#molloy_malone_unnamable"/>
-    <hasBuyer rdf:resource="#rarity"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_6">
-    <hasBook rdf:resource="#epic_of_gilgamesh"/>
-    <hasBuyer rdf:resource="#pinkie_pie"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_7">
-    <hasBook rdf:resource="#le_pere_goriot"/>
-    <hasBuyer rdf:resource="#applejack"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_8">
-    <hasBook rdf:resource="#one_thousand_and_one_nights"/>
-    <hasBuyer rdf:resource="#rarity"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_9">
-    <hasBook rdf:resource="#pride_and_prejudice"/>
-    <hasBuyer rdf:resource="#spike"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_10">
-    <hasBook rdf:resource="#things_fall_apart"/>
-    <hasBuyer rdf:resource="#twilight_sparkle"/>
-  </Purchase>
   <Purchase rdf:ID="purchase_1_11">
     <hasBook rdf:resource="#things_fall_apart"/>
     <hasBuyer rdf:resource="#applejack"/>
-  </Purchase>
-  <Purchase rdf:ID="purchase_1_12">
-    <hasBook rdf:resource="#things_fall_apart"/>
-    <hasBuyer rdf:resource="#pinkie_pie"/>
   </Purchase>
   <Purchase rdf:ID="purchase_1_13">
     <hasBook rdf:resource="#molloy_malone_unnamable"/>
@@ -497,10 +441,6 @@
     <hasBook rdf:resource="#book_of_job"/>
     <hasBuyer rdf:resource="#rainbow_dash"/>
   </Purchase>
-  <Purchase rdf:ID="purchase_1_16">
-    <hasBook rdf:resource="#book_of_job"/>
-    <hasBuyer rdf:resource="#spike"/>
-  </Purchase>
   <Purchase rdf:ID="purchase_1_17">
     <hasBook rdf:resource="#one_thousand_and_one_nights"/>
     <hasBuyer rdf:resource="#spike"/>
@@ -509,8 +449,8 @@
     <hasBook rdf:resource="#nijals_saga"/>
     <hasBuyer rdf:resource="#twilight_sparkle"/>
   </Purchase>
-  <Purchase rdf:ID="purchase_1_19">
-    <hasBook rdf:resource="#book_of_job"/>
+  <Purchase rdf:ID="purchase_1_1">
+    <hasBook rdf:resource="#nijals_saga"/>
     <hasBuyer rdf:resource="#fluttershy"/>
   </Purchase>
   <Purchase rdf:ID="purchase_1_20">
@@ -518,8 +458,13 @@
     <hasBuyer rdf:resource="#fluttershy"/>
   </Purchase>
 
-  <!--CUSTOM RECOMMENDATIONS-->
 
+
+  <!--CUSTOM RECOMMENDATIONS-->
+  <Recommendation rdf:ID="recommendation_1_1">
+    <hasBuyer rdf:resource="#twilight_sparkle"/>
+    <hasBook rdf:resource="#the_divine_comedy"/>
+  </Recommendation>
 
   <!--SUBJECTS-->
   <!--Representing Classes as Values: Approach 2: Create special instances of the class to be used as property values (http://www.w3.org/TR/swbp-classes-as-values/)-->
