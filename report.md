@@ -16,6 +16,7 @@
 
 The Pellet reasoner's CLI is sufficient for this:
 
+
 ```
 $ java -jar pellet-2.3.0/lib/pellet-cli.jar classify bookstore.owl
 Classifying 8 elements
@@ -35,7 +36,9 @@ Classifying finished in 00:00
 
 This can be achieved by explicitly specifying that Customer and Author are subclasses of Person:
 
-`<rdfs:subClassOf rdf:resource="#Person"/>`
+```
+<rdfs:subClassOf rdf:resource="#Person"/>`
+```
 
 We can use the HermiT reasoner to check:
 
