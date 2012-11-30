@@ -129,5 +129,21 @@ git tag cas14.  `git checkout cas14`
 
 ## Between CAS 15 and CAS 17
 
+### Enable Jesstab and run bookstore-rules.jess
+
+`git checkout 5f975c03b8ceda128650381b31fc5f542e28bc1c`
+
+Same recommendation is given as was entered manually previously.
+
+### Create a new Jess rule that recommends books for a customer based on his or her previous purchases. 
+
+*If the customer has bought a book by a particular author, add recommendations for books written by the same author.*
+
+### Create a new Jess rule that recommends books for a customer based on his or her previous purchases. 
+
+*If the customer has bought a book on a particular subject, add recommendations for books of the same subject (and subclasses of that subject).*
+
+
+
 
 
