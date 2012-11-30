@@ -461,10 +461,12 @@
 
 
   <!--CUSTOM RECOMMENDATIONS-->
-  <Recommendation rdf:ID="recommendation_1_1">
+  <!--
+   <Recommendation rdf:ID="recommendation_1_1">
     <hasBuyer rdf:resource="#twilight_sparkle"/>
     <hasBook rdf:resource="#the_divine_comedy"/>
   </Recommendation>
+  -->
 
   <!--SUBJECTS-->
   <!--Representing Classes as Values: Approach 2: Create special instances of the class to be used as property values (http://www.w3.org/TR/swbp-classes-as-values/)-->
