@@ -10,12 +10,17 @@
 
 ---------------
 
+I completed the assessment using a combination of an XML text editor and Protege.  I found it helpful to make the initial extensions to the ontology by directly editing the OWL document, since this gave me a full understanding of how Protege is operating the data behind its interface. As the tasks become more complicated and required the use of Jess, I switched to using Protege fully. 
+
+Despite editing the CM directly it to complete the tasks, I was sure to check the resulting Ontology functioned correctly when imported into Protege.
+
+What follows is an explanation of what was done at each stage to successfully complete the set tasks.  The work is broken down by CAS mark and the tasks within each bracket. 
+
 ## Between CAS 9 and CAS 11
 
 ###  Classify the ontology using an ontology reasoner
 
-The Pellet reasoner's CLI is sufficient for this:
-
+The Pellet reasoner's CLI shows the following output:
 
 ```
 $ java -jar pellet-2.3.0/lib/pellet-cli.jar classify bookstore.owl
