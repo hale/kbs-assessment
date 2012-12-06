@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns="http://www.cs4021/bookstore.owl#"
+  xml:base="http://www.cs4021/bookstore.owl">
+
+  <owl:Ontology rdf:about=""/>
+
+  <owl:Class rdf:ID="Recommendation"/>
+  <owl:Class rdf:ID="Person"/>
+
+  <owl:Class rdf:ID="Customer">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+          >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasMadePurchase"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Book"/>
+  <owl:Class rdf:ID="Purchase"/>
+
+  <owl:Class rdf:ID="Author">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+          >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasWritten"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="#hasMadePurchase">
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:range rdf:resource="#Purchase"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasBook">
+    <rdfs:range rdf:resource="#Book"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Purchase"/>
+          <owl:Class rdf:about="#Recommendation"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasAuthor">
+    <rdfs:domain rdf:resource="#Book"/>
+    <rdfs:range rdf:resource="#Person"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasWritten"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasWritten">
+    <owl:inverseOf rdf:resource="#hasAuthor"/>
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:range rdf:resource="#Book"/>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:ID="hasTitle">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Book"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+
+  <owl:FunctionalProperty rdf:ID="hasName">
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+
+  <owl:FunctionalProperty rdf:ID="hasBuyer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Purchase"/>
+          <owl:Class rdf:about="#Recommendation"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Person"/>
+  </owl:FunctionalProperty>
+
+
+  <Purchase rdf:ID="Purchase_17">
+    <hasBook>
+      <Book rdf:ID="Moby_Dick">
+        <hasAuthor>
+          <Author rdf:ID="Herman_Melville">
+            <hasWritten rdf:resource="#Moby_Dick"/>
+            <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Herman Melville</hasName>
+          </Author>
+        </hasAuthor>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Moby Dick</hasTitle>
+      </Book>
+    </hasBook>
+    <hasBuyer>
+      <Customer rdf:ID="David">
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >David</hasName>
+        <hasMadePurchase rdf:resource="#Purchase_17"/>
+        <hasMadePurchase>
+          <Purchase rdf:ID="Purchase_4">
+            <hasBuyer rdf:resource="#David"/>
+            <hasBook>
+              <Book rdf:ID="Fly_Fishing">
+                <hasAuthor>
+                  <Author rdf:ID="J_R_Hartley">
+                    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >J. R. Hartley</hasName>
+                    <hasWritten rdf:resource="#Fly_Fishing"/>
+                  </Author>
+                </hasAuthor>
+                <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Fly Fishing</hasTitle>
+              </Book>
+            </hasBook>
+          </Purchase>
+        </hasMadePurchase>
+      </Customer>
+    </hasBuyer>
+  </Purchase>
+
+  <Purchase rdf:ID="Purchase_5">
+    <hasBook rdf:resource="#Moby_Dick"/>
+    <hasBuyer>
+      <Customer rdf:ID="Jeff">
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Jeff</hasName>
+        <hasMadePurchase rdf:resource="#Purchase_5"/>
+      </Customer>
+    </hasBuyer>
+  </Purchase>
+
+  <Book rdf:ID="things_fall_apart">
+    <hasAuthor>
+      <Author rdf:ID="chinua_achebe">
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Chinua Achebe
+        </hasName>
+        <hasWritten rdf:resource="#things_fall_apart"/>
+      </Author>
+    </hasAuthor>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Things Fall Apart
+    </hasTitle>
+  </Book>
+
+  <Book rdf:ID="fairy_tales">
+    <hasAuthor>
+      <Author rdf:ID="hans_christian_anderson">
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Hans Christian Anderson
+        </hasName>
+        <hasWritten rdf:resource="#fairy_tales"/>
+      </Author>
+    </hasAuthor>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Fairy Tales
+    </hasTitle>
+  </Book>
+
+  <Book rdf:ID="the_divine_comedy">
+    <hasAuthor>
+      <Author rdf:ID="dante_alighieri">
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Dante Alighieri
+        </hasName>
+        <hasWritten rdf:resource="#the_divine_comedy"/>
+      </Author>
+    </hasAuthor>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >The Divine Comedy
+    </hasTitle>
+  </Book>
+
+  <Author rdf:ID="anonymous">
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Anonymous
+    </hasName>
+    <hasWritten rdf:resource="#epic_of_gilgamesh"/>
+    <hasWritten rdf:resource="#book_of_job"/>
+    <hasWritten rdf:resource="#one_thousand_and_one_nights"/>
+    <hasWritten rdf:resource="#nijals_saga"/>
+  </Author>
+
+  <Book rdf:ID="epic_of_gilgamesh">
+    <hasAuthor rdf:resource="#anonymous"/>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Epic of Gilgamesh
+    </hasTitle>
+  </Book>
+
+  <Book rdf:ID="book_of_job">
+    <hasAuthor rdf:resource="#anonymous"/>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Book of Job
+    </hasTitle>
+  </Book>
+
+  <Book rdf:ID="one_thousand_and_one_nights">
+    <hasAuthor rdf:resource="#anonymous"/>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >On Thousand and One Nights
+    </hasTitle>
+  </Book>
+
+  <Book rdf:ID="nijals_saga">
+    <hasAuthor rdf:resource="#anonymous"/>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Njal's Saga
+    </hasTitle>
+  </Book>
+
+  <Book rdf:ID="pride_and_prejudice">
+    <hasAuthor>
+      <Author rdf:ID="jane_austen">
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+         >Jane Austen
+        </hasName>
+        <hasWritten rdf:resource="#pride_and_prejudice"/>
+      </Author>
+    </hasAuthor>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Pride and Prejudice
+    </hasTitle>
+  </Book>
+
+  <Book rdf:ID="le_pere_goriot">
+    <hasAuthor>
+      <Author rdf:ID="honore_de_balzac">
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Honore de Balzac
+        </hasName>
+        <hasWritten rdf:resource="#le_pere_goriot"/>
+      </Author>
+    </hasAuthor>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Le Pere Goriot
+    </hasTitle>
+  </Book>
+
+  <Book rdf:ID="molloy_malone_unnamable">
+    <hasAuthor>
+      <Author rdf:ID="samuel_beckett">
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Samuel Beckett
+        </hasName>
+        <hasWritten rdf:resource="#molloy_malone_unnamable"/>
+      </Author>
+    </hasAuthor>
+    <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Molloy, Malone Dies, The Unnamable, a trilogy
+    </hasTitle>
+  </Book>
+
+
+  <Customer rdf:ID="twilight_sparkle">
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Twilight Sparkle
+    </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_2" />
+    <hasMadePurchase rdf:resource="#purchase_1_10" />
+  </Customer>
+
+  <Customer rdf:ID="spike">
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Spike
+    </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_3" />
+    <hasMadePurchase rdf:resource="#purchase_1_9" />
+  </Customer>
+
+  <Customer rdf:ID="applejack">
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Applejack
+    </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_7" />
+  </Customer>
+
+  <Customer rdf:ID="rainbow_dash">
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Rainbow Dash
+    </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_4" />
+  </Customer>
+
+  <Customer rdf:ID="pinkie_pie">
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Pinkie Pie
+    </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_6" />
+  </Customer>
+
+  <Customer rdf:ID="fluttershy">
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Fluttershy
+    </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_1" />
+  </Customer>
+
+  <Customer rdf:ID="rarity">
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Rarity
+    </hasName>
+    <hasMadePurchase rdf:resource="#purchase_1_5" />
+  </Customer>
+
+  <Purchase rdf:ID="purchase_1_1">
+    <hasBook rdf:resource="#nijals_saga"/>
+    <hasBuyer rdf:resource="#fluttershy"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_2">
+    <hasBook rdf:resource="#pride_and_prejudice"/>
+    <hasBuyer rdf:resource="#twilight_sparkle"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_3">
+    <hasBook rdf:resource="#the_divine_comedy"/>
+    <hasBuyer rdf:resource="#spike"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_4">
+    <hasBook rdf:resource="#fairy_tales"/>
+    <hasBuyer rdf:resource="#rainbow_dash"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_5">
+    <hasBook rdf:resource="#molloy_malone_unnamable"/>
+    <hasBuyer rdf:resource="#rarity"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_6">
+    <hasBook rdf:resource="#epic_of_gilgamesh"/>
+    <hasBuyer rdf:resource="#pinkie_pie"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_7">
+    <hasBook rdf:resource="#le_pere_goriot"/>
+    <hasBuyer rdf:resource="#applejack"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_8">
+    <hasBook rdf:resource="#one_thousand_and_one_nights"/>
+    <hasBuyer rdf:resource="#rarity"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_9">
+    <hasBook rdf:resource="#pride_and_prejudice"/>
+    <hasBuyer rdf:resource="#spike"/>
+  </Purchase>
+  <Purchase rdf:ID="purchase_1_10">
+    <hasBook rdf:resource="#things_fall_apart"/>
+    <hasBuyer rdf:resource="#twilight_sparkle"/>
+  </Purchase>
+
+
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.2, Build 311)  http://protege.stanford.edu -->
