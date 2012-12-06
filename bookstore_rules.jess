@@ -6,6 +6,8 @@
 
 (mapclass http://www.cs4021/bookstore.owl#Recommendation)
 
+;(watch all)
+
 (defrule recommend-1
 
   (object (is-a http://www.cs4021/bookstore.owl#Customer) (OBJECT ?PersonObject1) (http://www.cs4021/bookstore.owl#hasName ?Person1) (http://www.cs4021/bookstore.owl#hasMadePurchase $? ?Purch1 $?))
@@ -30,3 +32,39 @@
   (printout t "Recommendation for " ?Person1 ": other people that bought \"" ?titleA "\" also bought \"" ?titleB "\"" crlf)
   (make-instance of http://www.cs4021/bookstore.owl#Recommendation (http://www.cs4021/bookstore.owl#hasBuyer ?PersonObject1) (http://www.cs4021/bookstore.owl#hasBook ?BookObjectB))
 )
+
+;If the customer has bought a book by a particular author, add recommendations for books written by the same author.
+(defrule recommend-2
+  ;alt idea
+  ; to do this we need:
+  ;
+  ; a specific customer who has bought a specific book
+  ; any book bought by the author of that specific book
+  ; 
+  ; then you state the constraints which is that:
+  ;
+  ; the 'any book' must not be a purchase of the customer
+  ; the book cannot be the same as the specific book
+  ;
+  ; then you print the recommendation, which is the second 'any' book
+  ;
+  ;customer with a specific purchase
+  (object (is-a http://www.cs4021/bookstore.owl#Customer) (OBJECT ?PersonObject1) (http://www.cs4021/bookstore.owl#hasName ?Person1) (http://www.cs4021/bookstore.owl#hasMadePurchase ?Purch1 ))
+
+  ; the book associated with that purchase
+  (object (is-a http://www.cs4021/bookstore.owl#Book) (OBJECT ?BookObject1) (http://www.cs4021/bookstore.owl#hasName ?bookTitle1) (http://www.cs4021/bookstore.owl#hasBuyer ?PersonObject1) (http://www.cs4021/bookstore.owl#hasAuthor  ?AuthorObject1 ))
+
+  ; any other book by the same specific author
+  (object (is-a http://www.cs4021/bookstore.owl#Book) (OBJECT ?BookObject2) (http://www.cs4021/bookstore.owl#hasName ?bookTitle2) (http://www.cs4021/bookstore.owl#hasBuyer $? ?PersonObject2 $?) (http://www.cs4021/bookstore.owl#hasAuthor ?AuthorObject1))
+
+  ; TODO: constraints go here...i think what i wrote means it will print all books by the same author as the first.  which means all the 'unknown' books i think.
+  ; FIXME: currently not printing out anything at all
+
+
+  =>
+
+  (printout t "Recommendation for " ?Person1 ": the author of: \"" ?bookTitle1 " has also written: \"" ?bookTitle2 "\"" crlf)
+)
+
+
+
