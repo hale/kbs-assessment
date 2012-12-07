@@ -1,10 +1,14 @@
 (mapclass http://www.cs4021/bookstore.owl#Customer)
 
+(mapclass http://www.cs4021/bookstore.owl#Author)
+
 (mapclass http://www.cs4021/bookstore.owl#Book)
 
 (mapclass http://www.cs4021/bookstore.owl#Purchase)
 
 (mapclass http://www.cs4021/bookstore.owl#Recommendation)
+
+;(watch all)
 
 (defrule recommend-1
 
@@ -30,3 +34,33 @@
   (printout t "Recommendation for " ?Person1 ": other people that bought \"" ?titleA "\" also bought \"" ?titleB "\"" crlf)
   (make-instance of http://www.cs4021/bookstore.owl#Recommendation (http://www.cs4021/bookstore.owl#hasBuyer ?PersonObject1) (http://www.cs4021/bookstore.owl#hasBook ?BookObjectB))
 )
+
+;If the customer has bought a book by a particular author, add recommendations for books written by the same author.
+(defrule recommend-2
+
+  ; customer with a specific purchase
+  (object (is-a http://www.cs4021/bookstore.owl#Customer) (OBJECT ?PersonObject1) (http://www.cs4021/bookstore.owl#hasName ?Person1) (http://www.cs4021/bookstore.owl#hasMadePurchase $? ?Purch1 $? ))
+
+  ; that purchase
+  (object (is-a http://www.cs4021/bookstore.owl#Purchase) (OBJECT ?Purch1) (http://www.cs4021/bookstore.owl#hasBuyer ?PersonObject1) (http://www.cs4021/bookstore.owl#hasBook $? ?BookObject1 $?))
+   
+  ; that book
+  (object (is-a http://www.cs4021/bookstore.owl#Book) (OBJECT ?BookObject1) (http://www.cs4021/bookstore.owl#hasTitle ?BookTitle1) (http://www.cs4021/bookstore.owl#hasAuthor $? ?AuthorObject1 $? ))
+
+  ; that author, and their other book
+  (object (is-a http://www.cs4021/bookstore.owl#Author) (OBJECT ?AuthorObject1) (http://www.cs4021/bookstore.owl#hasName ?AuthorName1) (http://www.cs4021/bookstore.owl#hasWritten $? ?BookObject2 $?))
+
+  ; that book
+  (object (is-a http://www.cs4021/bookstore.owl#Book) (OBJECT ?BookObject2) (http://www.cs4021/bookstore.owl#hasTitle ?BookTitle2))
+
+  ; first cannot be the same as second book
+  (test (neq ?BookTitle1 ?BookTitle2))
+
+  =>
+
+  (printout t "Recommendation for " ?Person1 ": the author of: \"" ?BookTitle1 " has also written: \"" ?BookTitle2 "\"" crlf)
+  (make-instance of http://www.cs4021/bookstore.owl#Recommendation (http://www.cs4021/bookstore.owl#hasBuyer ?PersonObject1) (http://www.cs4021/bookstore.owl#hasBook ?BookObject2))
+)
+
+
+

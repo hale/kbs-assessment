@@ -256,8 +256,7 @@
 
   <Author rdf:ID="anonymous">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Anonymous
-    </hasName>
+      >Anonymous</hasName>
     <hasWritten rdf:resource="#epic_of_gilgamesh"/>
     <hasWritten rdf:resource="#book_of_job"/>
     <hasWritten rdf:resource="#one_thousand_and_one_nights"/>
@@ -268,112 +267,96 @@
     <hasAuthor>
       <Author rdf:ID="chinua_achebe">
         <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >Chinua Achebe
-        </hasName>
+          >Chinua Achebe</hasName>
         <hasWritten rdf:resource="#things_fall_apart"/>
       </Author>
     </hasAuthor>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Things Fall Apart
-    </hasTitle>
+      >Things Fall Apart</hasTitle>
     <hasSubject rdf:resource="#novel_c20_subject"/>
   </Book>
   <Book rdf:ID="fairy_tales">
     <hasAuthor>
       <Author rdf:ID="hans_christian_anderson">
         <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >Hans Christian Anderson
-        </hasName>
+          >Hans Christian Anderson</hasName>
         <hasWritten rdf:resource="#fairy_tales"/>
       </Author>
     </hasAuthor>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Fairy Tales
-    </hasTitle>
+      >Fairy Tales</hasTitle>
     <hasSubject rdf:resource="#fiction_subject"/>
   </Book>
   <Book rdf:ID="the_divine_comedy">
     <hasAuthor>
       <Author rdf:ID="dante_alighieri">
         <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >Dante Alighieri
-        </hasName>
+          >Dante Alighieri</hasName>
         <hasWritten rdf:resource="#the_divine_comedy"/>
       </Author>
     </hasAuthor>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >The Divine Comedy
-    </hasTitle>
+      >The Divine Comedy</hasTitle>
     <hasSubject rdf:resource="#poetry_subject"/>
   </Book>
   <Book rdf:ID="epic_of_gilgamesh">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Epic of Gilgamesh
-    </hasTitle>
+      >Epic of Gilgamesh</hasTitle>
     <hasSubject rdf:resource="#poetry_subject"/>
   </Book>
   <Book rdf:ID="book_of_job">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Book of Job
-    </hasTitle>
+      >Book of Job</hasTitle>
     <hasSubject rdf:resource="#language_hebrew_subject"/>
   </Book>
   <Book rdf:ID="one_thousand_and_one_nights">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >On Thousand and One Nights
-    </hasTitle>
+      >On Thousand and One Nights</hasTitle>
     <hasSubject rdf:resource="#language_arabic_subject"/>
   </Book>
   <Book rdf:ID="nijals_saga">
     <hasAuthor rdf:resource="#anonymous"/>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Njal's Saga
-    </hasTitle>
+      >Njal's Saga</hasTitle>
     <hasSubject rdf:resource="#non_english_subject"/>
   </Book>
   <Book rdf:ID="pride_and_prejudice">
     <hasAuthor>
       <Author rdf:ID="jane_austen">
         <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-         >Jane Austen
-        </hasName>
+         >Jane Austen</hasName>
         <hasWritten rdf:resource="#pride_and_prejudice"/>
       </Author>
     </hasAuthor>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Pride and Prejudice
-    </hasTitle>
+      >Pride and Prejudice</hasTitle>
     <hasSubject rdf:resource="#novel_c19_subject"/>
   </Book>
   <Book rdf:ID="le_pere_goriot">
     <hasAuthor>
       <Author rdf:ID="honore_de_balzac">
         <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >Honore de Balzac
-        </hasName>
+          >Honore de Balzac</hasName>
         <hasWritten rdf:resource="#le_pere_goriot"/>
       </Author>
     </hasAuthor>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Le Pere Goriot
-    </hasTitle>
+      >Le Pere Goriot</hasTitle>
     <hasSubject rdf:resource="#language_french_subject"/>
   </Book>
   <Book rdf:ID="molloy_malone_unnamable">
     <hasAuthor>
       <Author rdf:ID="samuel_beckett">
         <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >Samuel Beckett
-        </hasName>
+          >Samuel Beckett</hasName>
         <hasWritten rdf:resource="#molloy_malone_unnamable"/>
       </Author>
     </hasAuthor>
     <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Molloy, Malone Dies, The Unnamable, a trilogy
-    </hasTitle>
+      >Molloy, Malone Dies, The Unnamable, a trilogy</hasTitle>
     <hasSubject rdf:resource="#play_subject"/>
   </Book>
 
@@ -381,45 +364,38 @@
 
   <Customer rdf:ID="twilight_sparkle">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Twilight Sparkle
-    </hasName>
+      >Twilight Sparkle</hasName>
     <hasMadePurchase rdf:resource="#purchase_1_18" />
   </Customer>
   <Customer rdf:ID="spike">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Spike
-    </hasName>
+      >Spike</hasName>
     <hasMadePurchase rdf:resource="#purchase_1_17" />
   </Customer>
   <Customer rdf:ID="applejack">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Applejack
-    </hasName>
+      >Applejack</hasName>
     <hasMadePurchase rdf:resource="#purchase_1_11" />
   </Customer>
   <Customer rdf:ID="rainbow_dash">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Rainbow Dash
-    </hasName>
+      >Rainbow Dash</hasName>
     <hasMadePurchase rdf:resource="#purchase_1_15" />
   </Customer>
   <Customer rdf:ID="pinkie_pie">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Pinkie Pie
-    </hasName>
+      >Pinkie Pie</hasName>
     <hasMadePurchase rdf:resource="#purchase_1_13" />
   </Customer>
   <Customer rdf:ID="fluttershy">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Fluttershy
-    </hasName>
+      >Fluttershy</hasName>
     <hasMadePurchase rdf:resource="#purchase_1_20" />
     <hasMadePurchase rdf:resource="#purchase_1_1" />
   </Customer>
   <Customer rdf:ID="rarity">
     <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-      >Rarity
-    </hasName>
+      >Rarity</hasName>
     <hasMadePurchase rdf:resource="#purchase_1_14" />
   </Customer>
 
