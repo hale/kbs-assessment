@@ -1,5 +1,7 @@
 (mapclass http://www.cs4021/bookstore.owl#Customer)
 
+(mapclass http://www.cs4021/bookstore.owl#Author)
+
 (mapclass http://www.cs4021/bookstore.owl#Book)
 
 (mapclass http://www.cs4021/bookstore.owl#Purchase)
@@ -35,35 +37,29 @@
 
 ;If the customer has bought a book by a particular author, add recommendations for books written by the same author.
 (defrule recommend-2
-  ;alt idea
-  ; to do this we need:
-  ;
-  ; a specific customer who has bought a specific book
-  ; any book bought by the author of that specific book
-  ; 
-  ; then you state the constraints which is that:
-  ;
-  ; the 'any book' must not be a purchase of the customer
-  ; the book cannot be the same as the specific book
-  ;
-  ; then you print the recommendation, which is the second 'any' book
-  ;
-  ;customer with a specific purchase
-  (object (is-a http://www.cs4021/bookstore.owl#Customer) (OBJECT ?PersonObject1) (http://www.cs4021/bookstore.owl#hasName ?Person1) (http://www.cs4021/bookstore.owl#hasMadePurchase ?Purch1 ))
 
-  ; the book associated with that purchase
-  (object (is-a http://www.cs4021/bookstore.owl#Book) (OBJECT ?BookObject1) (http://www.cs4021/bookstore.owl#hasName ?bookTitle1) (http://www.cs4021/bookstore.owl#hasBuyer ?PersonObject1) (http://www.cs4021/bookstore.owl#hasAuthor  ?AuthorObject1 ))
+  ; customer with a specific purchase
+  (object (is-a http://www.cs4021/bookstore.owl#Customer) (OBJECT ?PersonObject1) (http://www.cs4021/bookstore.owl#hasName ?Person1) (http://www.cs4021/bookstore.owl#hasMadePurchase $? ?Purch1 $? ))
 
-  ; any other book by the same specific author
-  (object (is-a http://www.cs4021/bookstore.owl#Book) (OBJECT ?BookObject2) (http://www.cs4021/bookstore.owl#hasName ?bookTitle2) (http://www.cs4021/bookstore.owl#hasBuyer $? ?PersonObject2 $?) (http://www.cs4021/bookstore.owl#hasAuthor ?AuthorObject1))
+  ; that purchase
+  (object (is-a http://www.cs4021/bookstore.owl#Purchase) (OBJECT ?Purch1) (http://www.cs4021/bookstore.owl#hasBuyer ?PersonObject1) (http://www.cs4021/bookstore.owl#hasBook $? ?BookObject1 $?))
+   
+  ; that book
+  (object (is-a http://www.cs4021/bookstore.owl#Book) (OBJECT ?BookObject1) (http://www.cs4021/bookstore.owl#hasTitle ?BookTitle1) (http://www.cs4021/bookstore.owl#hasAuthor $? ?AuthorObject1 $? ))
 
-  ; TODO: constraints go here...i think what i wrote means it will print all books by the same author as the first.  which means all the 'unknown' books i think.
-  ; FIXME: currently not printing out anything at all
+  ; that author, and their other book
+  (object (is-a http://www.cs4021/bookstore.owl#Author) (OBJECT ?AuthorObject1) (http://www.cs4021/bookstore.owl#hasName ?AuthorName1) (http://www.cs4021/bookstore.owl#hasWritten $? ?BookObject2 $?))
 
+  ; that book
+  (object (is-a http://www.cs4021/bookstore.owl#Book) (OBJECT ?BookObject2) (http://www.cs4021/bookstore.owl#hasTitle ?BookTitle2))
+
+  ; first cannot be the same as second book
+  (test (neq ?BookTitle1 ?BookTitle2))
 
   =>
 
-  (printout t "Recommendation for " ?Person1 ": the author of: \"" ?bookTitle1 " has also written: \"" ?bookTitle2 "\"" crlf)
+  (printout t "Recommendation for " ?Person1 ": the author of: \"" ?BookTitle1 " has also written: \"" ?BookTitle2 "\"" crlf)
+  (make-instance of http://www.cs4021/bookstore.owl#Recommendation (http://www.cs4021/bookstore.owl#hasBuyer ?PersonObject1) (http://www.cs4021/bookstore.owl#hasBook ?BookObject2))
 )
 
 
